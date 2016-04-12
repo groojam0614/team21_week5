@@ -184,38 +184,86 @@ public class calculatorTest {
 		User user = new User();
 		user.setLineNum(4);
 		calculateBill cBill = new calculateBill(user);
-		assertEquals(5, cBill.calFamilyDiscount());
+		assertEquals(5, cBill.calFamilyDiscount(), 2);
 	}
 	@Test
 	public void testCalFamilyCase2(){
 		User user = new User();
 		user.setLineNum(2);
 		calculateBill cBill = new calculateBill(user);
-		assertEquals(0, cBill.calFamilyDiscount());
+		assertEquals(0, cBill.calFamilyDiscount(), 2);
 	}
 	
 	@Test
 	public void testPrintBillCase1(){
-		
+		Appcontroller appController = new Appcontroller();
+		appController.user.setGrade('g');
+		appController.user.setMin(1123);
+		appController.user.setLineNum(4);
+		calculateBill cBill = new calculateBill(appController.user);
+		assertEquals(139.3, cBill.calBasicBill() + cBill.calAddBill() + cBill.calFamilyDiscount(), 2);
 	}
 	@Test
 	public void testPrintBillCase2(){
-		
+		Appcontroller appController = new Appcontroller();
+		appController.user.setGrade('g');
+		appController.user.setMin(878);
+		appController.user.setLineNum(4);
+		calculateBill cBill = new calculateBill(appController.user);
+		assertEquals(83.95, cBill.calBasicBill() + cBill.calAddBill() + cBill.calFamilyDiscount(), 2);
 	}
 	@Test
 	public void testPrintBillCase3(){
-		
+		Appcontroller appController = new Appcontroller();
+		appController.user.setGrade('g');
+		appController.user.setMin(1123);
+		appController.user.setLineNum(1);
+		calculateBill cBill = new calculateBill(appController.user);
+		assertEquals(105.3, cBill.calBasicBill() + cBill.calAddBill() + cBill.calFamilyDiscount(), 2);
 	}
 	@Test
 	public void testPrintBillCase4(){
-		
+		Appcontroller appController = new Appcontroller();
+		appController.user.setGrade('g');
+		appController.user.setMin(878);
+		appController.user.setLineNum(1);
+		calculateBill cBill = new calculateBill(appController.user);
+		assertEquals(49.95, cBill.calBasicBill() + cBill.calAddBill() + cBill.calFamilyDiscount(), 2);
 	}
 	@Test
 	public void testPrintBillCase5(){
-		
+		Appcontroller appController = new Appcontroller();
+		appController.user.setGrade('s');
+		appController.user.setMin(521);
+		appController.user.setLineNum(5);
+		calculateBill cBill = new calculateBill(appController.user);
+		assertEquals(94.29, cBill.calBasicBill() + cBill.calAddBill() + cBill.calFamilyDiscount(), 2);
 	}
 	@Test
 	public void testPrintBillCase6(){
-		
+		Appcontroller appController = new Appcontroller();
+		appController.user.setGrade('s');
+		appController.user.setMin(44);
+		appController.user.setLineNum(5);
+		calculateBill cBill = new calculateBill(appController.user);
+		assertEquals(82.95, cBill.calBasicBill() + cBill.calAddBill() + cBill.calFamilyDiscount(), 2);
+	}
+	@Test
+	public void testPrintBillCase7(){
+		Appcontroller appController = new Appcontroller();
+		appController.user.setGrade('s');
+		appController.user.setMin(523);
+		appController.user.setLineNum(2);
+		calculateBill cBill = new calculateBill(appController.user);
+		assertEquals(63.87, cBill.calBasicBill() + cBill.calAddBill() + cBill.calFamilyDiscount(), 2);
+	}
+	@Test
+	public void testPrintBillCase8(){
+		Appcontroller appController = new Appcontroller();
+		appController.user.setGrade('s');
+		appController.user.setMin(44);
+		appController.user.setLineNum(2);
+		calculateBill cBill = new calculateBill(appController.user);
+		assertEquals(51.43, cBill.calBasicBill() + cBill.calAddBill() + cBill.calFamilyDiscount(), 2);
 	}
 }
