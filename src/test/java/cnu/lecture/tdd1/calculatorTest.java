@@ -82,17 +82,140 @@ public class calculatorTest {
 	}
 	
 	@Test
-	public void testCalLineBillCase1(){
+	public void testCalLineBillGoldCase1(){
 		User user = new User();
 		user.setGrade('g');
 		user.setLineNum(2);
 		calculateBill cBill = new calculateBill(user);
 		assertEquals(64.45, cBill.calBasicBill(), 2);
 	}
-	
 	@Test
-	public void testCalLineBillCase2(){
-		
+	public void testCalLineBillGoldCase2(){
+		User user = new User();
+		user.setGrade('g');
+		user.setLineNum(4);
+		calculateBill cBill = new calculateBill(user);
+		assertEquals(83.95, cBill.calBasicBill(), 2);
+	}
+	@Test
+	public void testCalLineBillGoldCase3(){
+		User user = new User();
+		user.setGrade('g');
+		user.setLineNum(-1);
+		calculateBill cBill = new calculateBill(user);
+		assertNull(cBill.calBasicBill());
+	}
+	@Test
+	public void testCalLineBillSilverCase1(){
+		User user = new User();
+		user.setGrade('s');
+		user.setLineNum(2);
+		calculateBill cBill = new calculateBill(user);
+		assertEquals(51.45, cBill.calBasicBill(), 2);
+	}
+	@Test
+	public void testCalLineBillSilverCase2(){
+		User user = new User();
+		user.setGrade('s');
+		user.setLineNum(4);
+		calculateBill cBill = new calculateBill(user);
+		assertEquals(77.95, cBill.calBasicBill(), 2);
+	}
+	@Test
+	public void testCalLineBillSilverCase3(){
+		User user = new User();
+		user.setGrade('s');
+		user.setLineNum(-1);
+		calculateBill cBill = new calculateBill(user);
+		assertNull(cBill.calBasicBill());
 	}
 	
+	@Test
+	public void testCalAddBillGoldCase1(){
+		User user = new User();
+		user.setGrade('g');
+		user.setMin(1001);
+		calculateBill cBill = new calculateBill(user);
+		assertEquals(0.45, cBill.calAddBill(), 2);
+	}
+	@Test
+	public void testCalAddBillGoldCase2(){
+		User user = new User();
+		user.setGrade('g');
+		user.setMin(999);
+		calculateBill cBill = new calculateBill(user);
+		assertEquals(0, cBill.calAddBill(), 2);
+	}
+	@Test
+	public void testCalAddBillGoldCase3(){
+		User user = new User();
+		user.setGrade('g');
+		user.setMin(-1);
+		calculateBill cBill = new calculateBill(user);
+		assertNull(cBill.calBasicBill());
+	}
+	@Test
+	public void testCalAddBillSilverCase1(){
+		User user = new User();
+		user.setGrade('s');
+		user.setMin(520);
+		calculateBill cBill = new calculateBill(user);
+		assertEquals(10.8, cBill.calAddBill(), 2);
+	}
+	@Test
+	public void testCalAddBillSilverCase2(){
+		User user = new User();
+		user.setGrade('s');
+		user.setMin(499);
+		calculateBill cBill = new calculateBill(user);
+		assertEquals(0, cBill.calAddBill(), 2);
+	}
+	@Test
+	public void testCalAddBillSilverCase3(){
+		User user = new User();
+		user.setGrade('s');
+		user.setMin(-1);
+		calculateBill cBill = new calculateBill(user);
+		assertNull(cBill.calBasicBill());
+	}
+	
+	@Test
+	public void testCalFamilyCase1(){
+		User user = new User();
+		user.setLineNum(4);
+		calculateBill cBill = new calculateBill(user);
+		assertEquals(5, cBill.calFamilyDiscount());
+	}
+	@Test
+	public void testCalFamilyCase2(){
+		User user = new User();
+		user.setLineNum(2);
+		calculateBill cBill = new calculateBill(user);
+		assertEquals(0, cBill.calFamilyDiscount());
+	}
+	
+	@Test
+	public void testPrintBillCase1(){
+		
+	}
+	@Test
+	public void testPrintBillCase2(){
+		
+	}
+	@Test
+	public void testPrintBillCase3(){
+		
+	}
+	@Test
+	public void testPrintBillCase4(){
+		
+	}
+	@Test
+	public void testPrintBillCase5(){
+		
+	}
+	@Test
+	public void testPrintBillCase6(){
+		
+	}
 }
