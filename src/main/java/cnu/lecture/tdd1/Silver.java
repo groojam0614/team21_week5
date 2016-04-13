@@ -1,4 +1,4 @@
-package com.your.dream.real;
+package cnu.lecture.tdd1;
 
 public class Silver extends Grade{
 	

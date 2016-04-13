@@ -1,4 +1,4 @@
-package com.your.dream.real;
+﻿package cnu.lecture.tdd1;
 
 public class Appcontroller {
 	public User user = new User();
