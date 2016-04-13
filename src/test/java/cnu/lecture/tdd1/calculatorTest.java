@@ -95,7 +95,7 @@ public class calculatorTest {
 		user.setGrade('g');
 		user.setLineNum(4);
 		calculateBill cBill = new calculateBill(user);
-		assertEquals(83.95, cBill.calBasicBill(), 2);
+		assertEquals(83.95, cBill.calBasicBill() + 5 * (cBill.lineNum - 3), 2);
 	}
 	@Test
 	public void testCalLineBillGoldCase3(){
@@ -119,7 +119,7 @@ public class calculatorTest {
 		user.setGrade('s');
 		user.setLineNum(4);
 		calculateBill cBill = new calculateBill(user);
-		assertEquals(77.95, cBill.calBasicBill(), 2);
+		assertEquals(77.95, cBill.calBasicBill() + 5 * (cBill.lineNum - 3), 2);
 	}
 	@Test
 	public void testCalLineBillSilverCase3(){
