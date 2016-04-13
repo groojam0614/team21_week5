@@ -103,7 +103,7 @@ public class calculatorTest {
 		user.setGrade('g');
 		user.setLineNum(-1);
 		calculateBill cBill = new calculateBill(user);
-		assertNull(cBill.calBasicBill());
+		assertTrue(0 == cBill.calBasicBill());
 	}
 	@Test
 	public void testCalLineBillSilverCase1(){
@@ -127,7 +127,7 @@ public class calculatorTest {
 		user.setGrade('s');
 		user.setLineNum(-1);
 		calculateBill cBill = new calculateBill(user);
-		assertNull(cBill.calBasicBill());
+		assertTrue(0 == cBill.calBasicBill());
 	}
 	
 	@Test
@@ -152,7 +152,7 @@ public class calculatorTest {
 		user.setGrade('g');
 		user.setMin(-1);
 		calculateBill cBill = new calculateBill(user);
-		assertNull(cBill.calBasicBill());
+		assertTrue(0 == cBill.calBasicBill());
 	}
 	@Test
 	public void testCalAddBillSilverCase1(){
@@ -176,7 +176,7 @@ public class calculatorTest {
 		user.setGrade('s');
 		user.setMin(-1);
 		calculateBill cBill = new calculateBill(user);
-		assertNull(cBill.calBasicBill());
+		assertTrue(0 == cBill.calBasicBill());
 	}
 	
 	@Test
